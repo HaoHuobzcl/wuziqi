@@ -1,0 +1,521 @@
+git版本控制软件- -
+GitHub一个很流弊的项目托管平台
+
+
+
+git add 文件名 添加文件
+git commit 提交整个版本库
+
+随便修改点内容
+git status 检查变动
+git diff 检查变动的地方
+
+
+
+
+
+
+Microsoft Windows [版本 10.0.14393]
+(c) 2016 Microsoft Corporation。保留所有权利。
+
+C:\Users\小猪>D:
+
+D:\>cd
+
+D:\>cd D:\laozhu
+
+D:\laozhu>git add hehe.txt
+
+D:\laozhu>git commit -m"hhhh"
+[master (root-commit) 7376322] hhhh
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hehe.txt
+
+D:\laozhu>dir
+ 驱动器 D 中的卷是 LENOVO
+ 卷的序列号是 EAB5-98B5
+
+ D:\laozhu 的目录
+
+2018/01/02  14:34    <DIR>          .
+2018/01/02  14:34    <DIR>          ..
+2018/01/02  14:33                 0 hehe.txt
+               1 个文件              0 字节
+               2 个目录 25,746,931,712 可用字节
+
+D:\laozhu>git add hehe.txt
+
+D:\laozhu>git commit -m"呵呵呵"
+On branch master
+nothing to commit, working tree clean
+
+D:\laozhu>dir
+ 驱动器 D 中的卷是 LENOVO
+ 卷的序列号是 EAB5-98B5
+
+ D:\laozhu 的目录
+
+2018/01/02  14:46    <DIR>          .
+2018/01/02  14:46    <DIR>          ..
+2018/01/02  14:46                 0 xixi.txt
+               1 个文件              0 字节
+               2 个目录 25,746,931,712 可用字节
+
+D:\laozhu>git add xixi.txt
+
+D:\laozhu>git commit -m"窝草？"
+[master 848c859] 窝草？
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 xixi.txt
+
+D:\laozhu>git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    hehe.txt
+        modified:   xixi.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\laozhu>git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    hehe.txt
+        modified:   xixi.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\laozhu>git diff xixi.txt
+diff --git a/xixi.txt b/xixi.txt
+index e69de29..fc20041 100644
+--- a/xixi.txt
++++ b/xixi.txt
+@@ -0,0 +1,3 @@
++<BA><C3><B0><C9>
++
++<BA><C7><BA><C7><BA><C7>
+
+D:\laozhu>git diff xixi.tx
+fatal: ambiguous argument 'xixi.tx': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\laozhu>git diff xixi.txt
+diff --git a/xixi.txt b/xixi.txt
+index e69de29..a92ef33 100644
+--- a/xixi.txt
++++ b/xixi.txt
+@@ -0,0 +1 @@
++wo shi ni da ye
+
+D:\laozhu>git add xixi.txt
+
+D:\laozhu>git commit -m"???"
+[master 72360a8] ???
+ 1 file changed, 1 insertion(+)
+
+D:\laozhu>git diff
+diff --git a/hehe.txt b/hehe.txt
+deleted file mode 100644
+index e69de29..0000000
+
+D:\laozhu>git diff xixi.txt
+
+D:\laozhu>git log
+commit 72360a8ec1ab31948551ff4d7e15b71b7f762d63 (HEAD -> master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 15:05:54 2018 +0800
+
+    ???
+
+commit 848c85965dd73deb6b6d55500baacf28ada8ad67
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:47:10 2018 +0800
+
+    <E7><AA><9D><E8><8D><89><EF><BC><9F>
+
+commit 73763228b302aefc1a331df42d8c5d1b2739a666
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git reset --hard 848c85965dd73deb6b6d55500baacf28ada8ad67
+HEAD is now at 848c859 窝草？
+
+D:\laozhu>git log
+commit 848c85965dd73deb6b6d55500baacf28ada8ad67 (HEAD -> master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:47:10 2018 +0800
+
+    <E7><AA><9D><E8><8D><89><EF><BC><9F>
+
+commit 73763228b302aefc1a331df42d8c5d1b2739a666
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git reflog
+848c859 (HEAD -> master) HEAD@{0}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+72360a8 HEAD@{1}: commit: ???
+848c859 (HEAD -> master) HEAD@{2}: commit: <E7><AA><9D><E8><8D><89><EF><BC><9F>
+7376322 HEAD@{3}: commit (initial): hhhh
+
+D:\laozhu>git add xixi.txt
+
+D:\laozhu>git commit -m"add 123"
+[master 5099d70] add 123
+ 1 file changed, 1 insertion(+)
+
+D:\laozhu>git log
+commit 5099d7079568dce4ccfe5cdc1b7de1956a31ef0c (HEAD -> master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 15:55:35 2018 +0800
+
+    add 123
+
+commit 848c85965dd73deb6b6d55500baacf28ada8ad67
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:47:10 2018 +0800
+
+    <E7><AA><9D><E8><8D><89><EF><BC><9F>
+
+commit 73763228b302aefc1a331df42d8c5d1b2739a666
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git reset --hard 848c85965dd73deb6b6d55500baacf28ada8ad67
+HEAD is now at 848c859 窝草？
+
+D:\laozhu>git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+D:\laozhu>git reflog
+848c859 (HEAD -> master) HEAD@{0}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+5099d70 HEAD@{1}: commit: add 123
+848c859 (HEAD -> master) HEAD@{2}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+72360a8 HEAD@{3}: commit: ???
+848c859 (HEAD -> master) HEAD@{4}: commit: <E7><AA><9D><E8><8D><89><EF><BC><9F>
+7376322 HEAD@{5}: commit (initial): hhhh
+
+D:\laozhu>git reset --hard 848c85965dd73deb6b6d55500baacf28ada8ad67
+HEAD is now at 848c859 窝草？
+
+D:\laozhu>git log
+commit 848c85965dd73deb6b6d55500baacf28ada8ad67 (HEAD -> master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:47:10 2018 +0800
+
+    <E7><AA><9D><E8><8D><89><EF><BC><9F>
+
+commit 73763228b302aefc1a331df42d8c5d1b2739a666
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git reflog
+848c859 (HEAD -> master) HEAD@{0}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+848c859 (HEAD -> master) HEAD@{1}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+5099d70 HEAD@{2}: commit: add 123
+848c859 (HEAD -> master) HEAD@{3}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+72360a8 HEAD@{4}: commit: ???
+848c859 (HEAD -> master) HEAD@{5}: commit: <E7><AA><9D><E8><8D><89><EF><BC><9F>
+7376322 HEAD@{6}: commit (initial): hhhh
+
+D:\laozhu>git add xixi.txt
+
+D:\laozhu>git commit -m"add 456"
+[master 2799d0b] add 456
+ 1 file changed, 1 insertion(+)
+
+D:\laozhu>git log
+commit 2799d0b223e7d47e7af6675e1a730a94c025c2ac (HEAD -> master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 16:00:41 2018 +0800
+
+    add 456
+
+commit 848c85965dd73deb6b6d55500baacf28ada8ad67
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:47:10 2018 +0800
+
+    <E7><AA><9D><E8><8D><89><EF><BC><9F>
+
+commit 73763228b302aefc1a331df42d8c5d1b2739a666
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git reset --hard  2799d0b223e7d47e7af6675e1a730a94c025c2ac
+HEAD is now at 2799d0b add 456
+
+D:\laozhu>git reflog
+2799d0b (HEAD -> master) HEAD@{0}: reset: moving to 2799d0b223e7d47e7af6675e1a730a94c025c2ac
+2799d0b (HEAD -> master) HEAD@{1}: commit: add 456
+848c859 HEAD@{2}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+848c859 HEAD@{3}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+5099d70 HEAD@{4}: commit: add 123
+848c859 HEAD@{5}: reset: moving to 848c85965dd73deb6b6d55500baacf28ada8ad67
+72360a8 HEAD@{6}: commit: ???
+848c859 HEAD@{7}: commit: <E7><AA><9D><E8><8D><89><EF><BC><9F>
+7376322 HEAD@{8}: commit (initial): hhhh
+
+D:\laozhu>git reset --hard  2799d0b223e7d47e7af6675e1a730a94c025c2ac
+HEAD is now at 2799d0b add 456
+
+D:\laozhu>git reset --hard 5099d70
+HEAD is now at 5099d70 add 123
+
+D:\laozhu>git reset --hard 2799d0b
+HEAD is now at 2799d0b add 456
+
+D:\laozhu>git reset --hard 7376322
+HEAD is now at 7376322 hhhh
+
+D:\laozhu>git add hehe.txt
+
+D:\laozhu>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hehe.txt
+
+
+D:\laozhu>git reset HEAD hehe.txt
+Unstaged changes after reset:
+M       hehe.txt
+
+D:\laozhu>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hehe.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\laozhu>git checkout -- hehe.txt
+
+D:\laozhu>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\laozhu>git add hehe.txt
+
+D:\laozhu>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hehe.txt
+
+
+D:\laozhu>git rest HEAD hehe.txt
+git: 'rest' is not a git command. See 'git --help'.
+
+The most similar command is
+        reset
+
+D:\laozhu>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hehe.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hehe.txt
+
+
+D:\laozhu>git checkout -- hehe.txt
+
+D:\laozhu>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hehe.txt
+
+
+D:\laozhu>git add Login.exe
+
+D:\laozhu>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Login.exe
+        modified:   hehe.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    Login.exe
+
+
+D:\laozhu>git checkout -- Login.exe
+
+D:\laozhu>git checkout -- Login.exe
+
+D:\laozhu>git log
+commit 73763228b302aefc1a331df42d8c5d1b2739a666 (HEAD -> master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git checkout 73763228b302aefc1a331df42d8c5d1b2739a666
+Note: checking out '73763228b302aefc1a331df42d8c5d1b2739a666'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 7376322... hhhh
+M       hehe.txt
+
+D:\laozhu>git checkout -- Login.exe
+
+D:\laozhu>git checkout -- hehe.txt
+
+D:\laozhu>git rm Login.exe
+rm 'Login.exe'
+
+D:\laozhu>git checkout -- Login.exxe
+error: pathspec 'Login.exxe' did not match any file(s) known to git.
+
+D:\laozhu>git checkout -- Login.exe
+error: pathspec 'Login.exe' did not match any file(s) known to git.
+
+D:\laozhu>git status
+HEAD detached at 7376322
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hehe.txt
+
+
+D:\laozhu>git reset -loghard
+error: unknown switch `l'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <paths>...
+   or: EXPERIMENTAL: git reset [-q] [--stdin [-z]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<paths>...]
+
+    -q, --quiet           be quiet, only report errors
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    -z                    EXPERIMENTAL: paths are separated with NUL character
+    --stdin               EXPERIMENTAL: read paths from <stdin>
+
+
+D:\laozhu>git reset -log
+error: unknown switch `l'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <paths>...
+   or: EXPERIMENTAL: git reset [-q] [--stdin [-z]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<paths>...]
+
+    -q, --quiet           be quiet, only report errors
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    -z                    EXPERIMENTAL: paths are separated with NUL character
+    --stdin               EXPERIMENTAL: read paths from <stdin>
+
+
+D:\laozhu>git reset log
+fatal: ambiguous argument 'log': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\laozhu>git log
+commit 73763228b302aefc1a331df42d8c5d1b2739a666 (HEAD, master)
+Author: Zhupengy <894363399@qq.com>
+Date:   Tue Jan 2 14:45:19 2018 +0800
+
+    hhhh
+
+D:\laozhu>git reset --hard 73763228b302aefc1a331df42d8c5d1b2739a666
+HEAD is now at 7376322 hhhh
+
+D:\laozhu>git add hehe.txt
+
+D:\laozhu>git checkout hehe.txt
+
+D:\laozhu>
